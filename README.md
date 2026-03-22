@@ -1,16 +1,73 @@
-# React + Vite
+# RoamTogether
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Collaborative group trip planning — from "where should we go?" to "here's the plan."
 
-Currently, two official plugins are available:
+## Problem
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Group trips are chaotic. WhatsApp for chat, separate apps for costs, no central place to plan together.
 
-## React Compiler
+## Solution
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+RoamTogether handles the full group trip lifecycle:
 
-## Expanding the ESLint configuration
+1. **Vote** — Add destination ideas, everyone votes
+2. **Plan** — Day-by-day itinerary
+3. **Delegate** — Assign tasks (book restaurant, arrange transport)
+4. **Split Costs** — Track expenses and who owes whom
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- Frontend: React + Vite
+- Backend: Supabase (auth + database + real-time)
+- Hosting: Vercel
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+## Features
+
+### V1 (MVP)
+- [x] Create trip with shareable invite link
+- [x] Add destination ideas with voting
+- [x] Itinerary planning (day-by-day)
+- [x] Task delegation
+- [x] Cost splitting
+- [x] Past trips (auto-filters by end date)
+
+### V2
+- [ ] Real-time collaboration (Supabase)
+- [ ] User authentication
+- [ ] Mobile app
+
+## Project Status
+
+**Status:** In Development (Mock data, needs backend)
+
+## Roadmap
+
+See Notion for full roadmap: [Link to Projects database]
+
+## Rollback
+
+If something breaks, rollback to the last working version:
+
+```bash
+cd project-folder
+git log --oneline          # find the last good commit
+git reset --hard <commit>  # reset to that commit
+git push --force           # push the rollback
+```
+
+Example (rollback to commit `abc1234`):
+```bash
+git reset --hard abc1234
+git push --force
+```
+
+## License
+
+MIT

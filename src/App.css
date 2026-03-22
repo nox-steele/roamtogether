@@ -1,0 +1,837 @@
+:root {
+  --primary: #1a5f4a;
+  --primary-hover: #134739;
+  --bg: #f8f7f4;
+  --card: #ffffff;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --border: #dfe6e9;
+  --accent: #e17055;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Home Page */
+.home {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.create-trip {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.create-trip input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.create-trip input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.create-trip button {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.create-trip button:hover {
+  background: var(--primary-hover);
+}
+
+/* Trip Page */
+.trip {
+  padding: 1rem;
+}
+
+.trip header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.trip header h1 {
+  flex: 1;
+  font-size: 1.5rem;
+}
+
+.back-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.back-btn:hover {
+  background: var(--border);
+}
+
+.invite-btn {
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.invite-section {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.invite-section code {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: #f1f2f6;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+/* Destinations */
+.destinations h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.add-destination {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-destination input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.add-destination input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.add-destination button {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-destination button:hover {
+  background: var(--primary-hover);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-light);
+  padding: 2rem;
+}
+
+.destination-list {
+  list-style: none;
+}
+
+.destination-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.dest-name {
+  font-weight: 500;
+}
+
+.dest-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.votes {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.dest-actions button {
+  padding: 0.4rem 0.8rem;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.dest-actions button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Trip Navigation */
+.trip-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: var(--card);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.nav-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-icon {
+  font-size: 1.75rem;
+}
+
+.nav-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Header Subtitle */
+.header-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: normal;
+}
+
+/* Itinerary Page */
+.itinerary {
+  padding: 1rem;
+}
+
+.day-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.day-tab {
+  padding: 0.6rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.day-tab.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.day-content {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.day-header h2 {
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.add-btn {
+  padding: 0.4rem 0.8rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Add Activity Form */
+.add-activity-form,
+.add-task-form,
+.add-expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.add-activity-form input,
+.add-activity-form select,
+.add-task-form input,
+.add-task-form select,
+.add-expense-form input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.add-activity-form button,
+.add-task-form button,
+.add-expense-form button {
+  padding: 0.6rem 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.cancel-btn {
+  background: var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 55px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.timeline-time {
+  width: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: right;
+  padding-top: 0.25rem;
+}
+
+.timeline-marker {
+  width: 32px;
+  height: 32px;
+  background: var(--bg);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.timeline-icon {
+  font-size: 0.9rem;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-top: 0.1rem;
+}
+
+.timeline-content h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.activity-location {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.activity-notes {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+/* Map Section */
+.map-section {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.map-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.map-placeholder {
+  height: 180px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.map-placeholder small {
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+
+/* Tasks Page */
+.tasks {
+  padding: 1rem;
+}
+
+.task-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat {
+  flex: 1;
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.task-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.task-filters button {
+  padding: 0.5rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.task-filters button.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.add-task-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.task-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.task-item.done .task-checkbox {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-title {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.task-title.done {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+.task-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* Costs Page */
+.costs {
+  padding: 1rem;
+}
+
+.cost-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card {
+  background: var(--card);
+  padding: 1.25rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.summary-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.show-split-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.split-details {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.split-details h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.balance-list {
+  list-style: none;
+}
+
+.balance-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.balance-item:last-child {
+  border-bottom: none;
+}
+
+.balance-person {
+  font-weight: 500;
+}
+
+.balance-amount {
+  font-weight: 500;
+}
+
+.balance-amount.positive {
+  color: #27ae60;
+}
+
+.balance-amount.negative {
+  color: #e74c3c;
+}
+
+.add-expense-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Expense List */
+.expense-list {
+  list-style: none;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.expense-info {
+  flex: 1;
+}
+
+.expense-desc {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.expense-paid {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.expense-amount {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* Past Trips Page */
+.past-trips {
+  padding: 1rem;
+}
+
+.past-trips header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.past-trips header h1 {
+  font-size: 1.5rem;
+}
+
+.trips-list {
+  list-style: none;
+}
+
+.trip-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.trip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.trip-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.status-badge.confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.completed {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+.status-badge.planning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.trip-details {
+  margin-bottom: 1rem;
+}
+
+.trip-dates,
+.trip-destination {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+
+.view-trip-btn {
+  width: 100%;
+  padding: 0.6rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--primary);
+  transition: all 0.2s;
+}
+
+.view-trip-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Home Links */
+.home-links {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.view-past-trips-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.view-past-trips-link:hover {
+  text-decoration: underline;
+}

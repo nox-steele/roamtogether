@@ -51,21 +51,17 @@ npm run dev
 
 See Notion for full roadmap: [Link to Projects database]
 
-## Rollback
+## Local Backup & Rollback
 
-If something breaks, rollback to the last working version:
-
+Backup:
 ```bash
-cd project-folder
-git log --oneline          # find the last good commit
-git reset --hard <commit>  # reset to that commit
-git push --force           # push the rollback
+/usr/local/bin/openclaw-backup-local.sh
 ```
+Backs up to: `/root/.openclaw/workspace/backups/latest.tar.gz`
 
-Example (rollback to commit `abc1234`):
+Rollback (one line):
 ```bash
-git reset --hard abc1234
-git push --force
+tar -xzf /root/.openclaw/workspace/backups/latest.tar.gz -C /
 ```
 
 ## License
